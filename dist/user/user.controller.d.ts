@@ -1,3 +1,4 @@
+import type { CreateUserDto } from './dtos/createUser.dto';
 export declare class UserController {
-    getAllUsers(): Promise<string>;
+    createUser(createUser: CreateUserDto): Promise<CreateUserDto>;
 }
