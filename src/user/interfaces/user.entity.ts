@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from "typeorm";
 
 
 @Entity('user')
@@ -15,4 +15,10 @@ export class UserEntity {
     cpf: string;
     @Column({ type: 'varchar', length: 255, nullable: false })
     password: string;
+    @Column({ type: 'int', nullable: false })
+    type_user: number;
+    @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+    created_at: Date;
+    @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+    updated_at: Date;
 }
